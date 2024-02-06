@@ -1,13 +1,7 @@
 const letra = ["e", "i", "a", "o", "u"];
 const cripto = ["enter", "imes", "ai", "ober", "ufat"];
-let frase = "";
-let fraseCodificada = "";
-// let jaCodificado = false;
-// let jaCopiado = false;
-
-// Adorei esse código, encontrei ele aqui: https://www.youtube.com/watch?v=W5oawMJaXbU
-
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let jaCopiado = false;
 
 document.querySelector("h1").onmouseover = event => {
     let iterations = 0;
@@ -40,10 +34,8 @@ function codificar() {
         let regex = new RegExp(currentLetter, 'g');
         frase = frase.replace(regex, currentCripto);
     }
-    exibirTextoNaTela('#texto-para-copiar', frase);
-    console.log(frase);
+    exibirTextoNaTela('#texto-decodificado', frase);
 }
-
 
 function decodificar() {
     let fraseCodificada = document.getElementById("frase").value;
@@ -54,11 +46,8 @@ function decodificar() {
         let regex = new RegExp(currentCripto, 'g');
         fraseCodificada = fraseCodificada.replace(regex, currentLetter);
     }
-
-    console.log(fraseCodificada);
-    exibirTextoNaTela('#texto-para-copiar', fraseCodificada);
+    exibirTextoNaTela('#texto-decodificado', fraseCodificada);
 }
-
 
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
@@ -66,11 +55,14 @@ function exibirTextoNaTela(tag, texto) {
 }
 
 function copiarTexto() {
-    let textoParaCopiar = document.getElementById("texto-para-copiar").innerText;
+    if (jaCopiado) return;
+    jaCopiado = true
+    let textoParaCopiar = document.getElementById("texto-decodificado").innerText;
     navigator.clipboard.writeText(textoParaCopiar);
-    exibirTextoNaTela('#texto-para-copiar', 'Copiado');
+    exibirTextoNaTela('#texto-decodificado', 'Copiado');
     setTimeout(function () {
-        exibirTextoNaTela('#texto-para-copiar', textoParaCopiar);
+        exibirTextoNaTela('#texto-decodificado', textoParaCopiar);
+        jaCopiado = false
     }, 500);
 }
 
