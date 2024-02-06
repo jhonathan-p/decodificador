@@ -33,15 +33,20 @@ button {
     background-color: black;
     border: 1px solid lime;
     padding: 8px 16px;
+    width: 150px;
 }
 
 button:hover {
     background-color: rgb(22, 22, 22);
 }
 
+button:active {
+    background-color: green;
+}
+
 h1 {
     font-size: 5rem;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     background-color: black;
 }
 
@@ -52,15 +57,49 @@ input {
     padding: 8px 16px;
 }
 
-p {
+#texto-para-copiar {
     border: 1px solid lime;
-    width: 400px;
-    height: 100px;
+    width: 550px;
+    height: 200px;
     padding: 8px 16px;
     background-color: black;
+}
+
+#texto-para-copiar:hover{
+    background-color: #222222;
+}
+
+#texto-para-copiar:active {
+    background-color: green;
 }
 
 div {
     display: flex;
     flex-direction: row;
+    gap: 16px;
+}
+
+@media (width <= 630px) {
+
+    input {
+        width: 300px;
+    }
+
+    /* p {
+        width: 300px;
+        margin: 1%;
+    } */
+
+    #texto-para-copiar {
+        width: 320px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    /* .inverter {
+        flex-direction: column-reverse;
+    } */
 }

@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DECODIFICADOR</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <h1 data-value="DECODIFICADOR">DECODIFICADOR</h1>
-    
-    <div>
+
+    <!-- <div class="inverter"> -->
         <input type="text" id="frase">
-        <button onclick="colarTexto()">Colar</button>
-    </div>
-    
-    <button onclick="codificar()">Codificar</button>
-    <button onclick="decodificar()">Decodificar</button>
-    
+        <!-- <button onclick="colarTexto()">Colar</button> -->
+    <!-- </div> -->
+
     <div>
-        <p id="texto-para-copiar">Texto aqui</p>
-        <button onclick="copiarTexto()">Copiar</button>
+        <button onclick="codificar()">Codificar</button>
+        <button onclick="decodificar()">Decodificar</button>
+    </div>
+
+    <div>
+        <!-- <p id="texto-para-copiar"></p> -->
+        <button onclick="copiarTexto()" id="texto-para-copiar"></button>
     </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>
