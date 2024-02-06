@@ -13,14 +13,17 @@
     <h1 data-value="DECODIFICADOR">DECODIFICADOR</h1>
 
     <section>
-        <input type="text" id="frase" maxlength="200">
-
+        <div>
+            <input type="text" id="frase" maxlength="200" value="Escreva aqui sua frase" onfocus="this.value=''">
+            <button title="Colar" class="paste__icon" onclick="colarTexto()"></button>
+        </div>            
+        
         <div>
             <button onclick="codificar()">Codificar</button>
             <button onclick="decodificar()">Decodificar</button>
         </div>
 
-        <button title="Clique para copiar" onclick="copiarTexto()" id="texto-decodificado"></button>
+        <button title="Copiar" onclick="copiarTexto()" id="texto-decodificado"></button>
     </section>
 
     <footer>

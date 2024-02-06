@@ -65,6 +65,8 @@ input {
     width: 400px;
     height: 24px;
     padding: 8px 16px;
+    border: none;
+    outline: none;
 }
 
 #texto-decodificado {
@@ -90,10 +92,19 @@ footer {
     position: absolute;
 }
 
+.paste__icon {
+    background-image: url(paste-icon.png);
+    background-size: 100%;
+    width: 30px;
+    height: 32px;
+    filter:brightness(200%);
+    border: 0;
+}
+
 @media (width <=630px) {
 
     input {
-        width: 280px;
+        width: 250px;
     }
 
     #texto-decodificado {

@@ -1,7 +1,7 @@
 const letra = ["e", "i", "a", "o", "u"];
 const cripto = ["enter", "imes", "ai", "ober", "ufat"];
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let jaCopiado = false;
+let ativo = false;
 
 document.querySelector("h1").onmouseover = event => {
     let iterations = 0;
@@ -54,20 +54,26 @@ function exibirTextoNaTela(tag, texto) {
     campo.innerText = texto;
 }
 
+// function delay() {
+//     setTimeout(function () {
+//         exibirTextoNaTela('#texto-decodificado', textoParaCopiar);
+//         ativo = false
+//     }, 500);
+// }
+
 function copiarTexto() {
-    if (jaCopiado) return;
-    jaCopiado = true
+    if (ativo) return;
+    ativo = true
     let textoParaCopiar = document.getElementById("texto-decodificado").innerText;
     navigator.clipboard.writeText(textoParaCopiar);
     exibirTextoNaTela('#texto-decodificado', 'Copiado');
     setTimeout(function () {
         exibirTextoNaTela('#texto-decodificado', textoParaCopiar);
-        jaCopiado = false
+        ativo = false
     }, 500);
 }
 
 async function colarTexto() {
     let textoParaColar = await navigator.clipboard.readText();
     document.getElementById("frase").value = textoParaColar;
-    console.log(textoParaColar);
 }
