@@ -102,6 +102,10 @@ footer {
     border: 0;
 }
 
+a {
+    font-weight: bold;
+}
+
 @media (width <=630px) {
 
     input {
@@ -117,11 +121,8 @@ footer {
         padding-bottom: 15%;
     }
 
-    p {
-        font-size: 0.8rem;
+    p, a {
+        font-size: 0.55rem;
     }
 
-    a {
-        font-size: 0.8rem;
-    }
 }
